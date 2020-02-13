@@ -31,7 +31,7 @@ namespace NoteSwiper
                 host = Console.ReadLine();
             } while (string.IsNullOrWhiteSpace(host));
 
-            endpoint = $"https://{host}/api";
+            endpoint = $"https://{host}/api/";
 
             // -- ユーザー情報をフェッチ
 
