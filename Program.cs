@@ -113,7 +113,7 @@ namespace NoteSwiper
                         break;
                     untilId = fetched.Last().Id;
                     notes.AddRange(fetched);
-                    Console.WriteLine($"Fetched {notes.Count}/{me.NotesCount} notes.");
+                    Console.WriteLine($"Fetched {notes.Count} notes.");
                 }
             }
             Console.WriteLine($"Fetched your {notes.Count} notes!");
@@ -131,11 +131,11 @@ namespace NoteSwiper
                         noteId = note.Id,
                         i = token,
                     });
-                    Console.WriteLine($"Deleted notes {i}/{notes.Count}");
+                    Console.WriteLine($"Deleted notes {i + 1}/{notes.Count}");
                 }
                 catch (ApiErrorException e)
                 {
-                    Console.WriteLine($"Exception thrown when deleting notes {i}: {e.Message}");
+                    Console.WriteLine($"Exception thrown when deleting notes {i + 1}: {e.Message}");
                     Console.WriteLine("Retry after 15 minutes");
                     await Task.Delay(899000);
                     i--;
